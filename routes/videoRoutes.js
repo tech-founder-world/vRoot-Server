@@ -1,7 +1,7 @@
 const express = require("express");
 const auth    = require('../middleware/auth');
 const multer  = require('multer');
-const { videoStorage } = require('../config/cloudinaryStorage');
+const { videoStorage } = require('../config/Cloudinarystorage');
 const {
   uploadVideo, getReels, getLongVideos,
   exploreVideos, getUserVideos,

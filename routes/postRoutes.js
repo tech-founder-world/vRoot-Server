@@ -1,7 +1,7 @@
 const express = require('express');
 const auth    = require('../middleware/auth');
 const multer  = require('multer');
-const { postStorage } = require('../config/cloudinaryStorage');
+const { postStorage } = require('../config/Cloudinarystorage');
 const {
   uploadPost, getFeed, searchPosts,
   toggleLike, addComment, toggleSave,
