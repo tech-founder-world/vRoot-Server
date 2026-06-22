@@ -5,7 +5,7 @@ const User    = require('../Schema/UserSchema');
 const router  = express.Router();
 const auth    = require('../middleware/auth');
 const multer  = require('multer');
-const { profileStorage } = require('../config/cloudinaryStorage');
+const { profileStorage } = require('../config/Cloudinarystorage');
 
 // ✅ Cloudinary storage — profile pics seedha Cloudinary jaayengi
 const upload = multer({ storage: profileStorage });
