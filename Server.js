@@ -33,6 +33,28 @@ mongoose
 app.use('/api/users', userRoutes);
 app.use('/api/video', videoRoutes);
 app.use('/api/posts', postRoutes); // ✅ New
-
+// Add this test endpoint
+app.get('/test-email', async (req, res) => {
+  try {
+    const { sendVerificationEmail } = require('./src/services/emailService');
+    
+    await sendVerificationEmail(
+      'your-email@gmail.com',  // Your email to receive test
+      'TestUser',              // Username
+      '123456'                 // OTP
+    );
+    
+    res.json({ 
+      success: true, 
+      message: '✅ Email sent successfully! Check your inbox.' 
+    });
+  } catch (error) {
+    console.error('Test email error:', error);
+    res.json({ 
+      success: false, 
+      error: error.message 
+    });
+  }
+});
 const PORT = process.env.PORT || 9091;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
