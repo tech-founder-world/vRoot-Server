@@ -30,6 +30,9 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
 
+  app.get("/",(req,res)=>{
+    res.send("api is working ")
+  })
 // ── Routes ──
 app.use('/api/users', userRoutes);
 app.use('/api/video', videoRoutes);
